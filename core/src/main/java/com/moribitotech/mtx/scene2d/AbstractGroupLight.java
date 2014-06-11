@@ -16,6 +16,7 @@
 
 package com.moribitotech.mtx.scene2d;
 
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Group;
@@ -76,7 +77,7 @@ public abstract class AbstractGroupLight extends Group {
 	}
 
 	@Override
-	public void draw(SpriteBatch batch, float parentAlpha) {
+	public void draw(Batch batch, float parentAlpha) {
 		super.draw(batch, parentAlpha);
 		// For fade out/in effect
 		batch.setColor(this.getColor().r, this.getColor().g, this.getColor().b,

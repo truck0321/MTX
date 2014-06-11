@@ -29,6 +29,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Scaling;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.moribitotech.mtx.game.AbstractGame;
 import com.moribitotech.mtx.settings.AppSettings;
 import com.moribitotech.mtx.settings.MtxLogger;
@@ -91,7 +92,7 @@ public abstract class AbstractScreen implements Screen {
 									+ "AppSettings.setUp() not called anywhere, Stage size will be 0,0");
 		}
 		//
-		stage = new Stage(AppSettings.SCREEN_W, AppSettings.SCREEN_H, false);
+		stage = new Stage(new FitViewport(AppSettings.SCREEN_W, AppSettings.SCREEN_H));
 		stage.getCamera().position.set(AppSettings.SCREEN_W / 2,
 				AppSettings.SCREEN_H / 2, 0);
 

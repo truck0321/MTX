@@ -18,6 +18,7 @@ package com.moribitotech.mtx.scene2d;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -113,7 +114,7 @@ public abstract class AbstractGroup extends Group {
 	}
 
 	@Override
-	public void draw(SpriteBatch batch, float parentAlpha) {
+	public void draw(Batch batch, float parentAlpha) {
 		super.draw(batch, parentAlpha);
 		// For fade out/in effect
 		batch.setColor(this.getColor().r, this.getColor().g, this.getColor().b,
@@ -305,7 +306,7 @@ public abstract class AbstractGroup extends Group {
 
 		if (!isAnimationMomentaryWaitingToBeCompleted) {
 			this.animationMomentary = animationMomentary;
-			this.animationMomentary.setPlayMode(Animation.NORMAL);
+			this.animationMomentary.setPlayMode(Animation.PlayMode.NORMAL);
 			this.isAnimationMomentaryActive = isAnimationMomentaryActive;
 			if (isAnimationMomentaryActive) {
 				stateTime = 0;
@@ -315,7 +316,7 @@ public abstract class AbstractGroup extends Group {
 		} else {
 			if (isAnimationMomentaryFinished) {
 				this.animationMomentary = animationMomentary;
-				this.animationMomentary.setPlayMode(Animation.NORMAL);
+				this.animationMomentary.setPlayMode(Animation.PlayMode.NORMAL);
 				this.isAnimationMomentaryActive = isAnimationMomentaryActive;
 				//
 				if (isAnimationMomentaryActive) {

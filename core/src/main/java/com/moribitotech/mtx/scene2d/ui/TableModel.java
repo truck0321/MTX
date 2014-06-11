@@ -16,6 +16,7 @@
 
 package com.moribitotech.mtx.scene2d.ui;
 
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -103,7 +104,7 @@ public class TableModel extends Table {
 	}
 
 	@Override
-	public void draw(SpriteBatch batch, float parentAlpha) {
+	public void draw(Batch batch, float parentAlpha) {
 		// Then draw child actors over bg
 		super.draw(batch, parentAlpha);
 

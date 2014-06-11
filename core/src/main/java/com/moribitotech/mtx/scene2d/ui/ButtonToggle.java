@@ -16,8 +16,9 @@
 
 package com.moribitotech.mtx.scene2d.ui;
 
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
@@ -49,7 +50,7 @@ public class ButtonToggle extends AbstractButton {
 	}
 
 	@Override
-	public void draw(SpriteBatch batch, float parentAlpha) {
+	public void draw(Batch batch, float parentAlpha) {
 		// If button locked
 		// ##################################################################
 		if (isToggleActive && textureLocked != null) {
@@ -90,7 +91,7 @@ public class ButtonToggle extends AbstractButton {
 		}
 	}
 
-	private void drawToggle(SpriteBatch batch) {
+	private void drawToggle(Batch batch) {
 		if (isToggleActive) {
 			batch.draw(textureToggleOn, getX(), getY(), getWidth(), getHeight());
 		} else {
@@ -100,7 +101,7 @@ public class ButtonToggle extends AbstractButton {
 		}
 	}
 
-	private void drawExternalTexture(SpriteBatch batch) {
+	private void drawExternalTexture(Batch batch) {
 		if (isExternalTextureActive && textureExternal != null) {
 			batch.draw(textureExternal, getX() + externalTexturePosX, getY()
 					+ externalTexturePosY, externalTextureSizeW,
@@ -108,11 +109,11 @@ public class ButtonToggle extends AbstractButton {
 		}
 	}
 
-	private void drawLocked(SpriteBatch batch) {
+	private void drawLocked(Batch batch) {
 		batch.draw(textureLocked, getX(), getY(), getWidth(), getHeight());
 	}
 
-	private void drawText(SpriteBatch batch) {
+	private void drawText(Batch batch) {
 		bitMapFont.draw(batch, text, getX() + textPosX, getY() + textPosY);
 	}
 

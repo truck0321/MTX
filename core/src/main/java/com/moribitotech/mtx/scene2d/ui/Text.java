@@ -16,6 +16,7 @@
 
 package com.moribitotech.mtx.scene2d.ui;
 
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.moribitotech.mtx.scene2d.AbstractActorLight;
@@ -46,13 +47,13 @@ public class Text extends AbstractActorLight {
 	}
 
 	@Override
-	public void draw(SpriteBatch batch, float parentAlpha) {
+	public void draw(Batch batch, float parentAlpha) {
 		super.draw(batch, parentAlpha);
 		//
 		drawText(batch);
 	}
 
-	private void drawText(SpriteBatch batch) {
+	private void drawText(Batch batch) {
 		if (bitMapFont != null) {
 			bitMapFont.draw(batch, text, getX(), getY());
 		}
